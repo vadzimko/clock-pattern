@@ -19,7 +19,7 @@ public class AbstractClock implements Clock {
     public int current(boolean forceRefresh) {
         if (currentValue == 0 || forceRefresh) {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-            return (int) (timestamp.getTime() / 1000);
+            this.currentValue = (int) (timestamp.getTime() / 1000);
         }
 
         return currentValue;
